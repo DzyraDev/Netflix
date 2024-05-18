@@ -28,6 +28,7 @@ export default function SubscriptionPlane() {
                         price={333445000}
                         durationInMonth={8}
                         features={["Feature 1", "Feature 2", "Feature 3"]}
+
                     />
                 </div>
                 {/* <!-- /Pricing Card --> */}
