@@ -39,6 +39,9 @@ Route::prefix('prototype')->name('prototype.')->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Prototype/Dashboard');
     })->name('dashboard');
+    Route::get('/subscriptionPlan', function () {
+        return Inertia::render('Prototype/SubscriptionPlan');
+    })->name('subscriptionPlan');
 });
 
 
@@ -52,22 +55,24 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('admin', function () {
-    return "Hi Admin";
-})->middleware('role:admin');
 
-Route::get('user', function () {
-    return "Hi user";
-})->middleware('role:user');
-
-// Route::get('/', function () {
-//     return Inertia::render('Welcome', [
-//         'canLogin' => Route::has('login'),
-//         'canRegister' => Route::has('register'),
-//         'laravelVersion' => Application::VERSION,
-//         'phpVersion' => PHP_VERSION,
-//     ]);
-// });
 
 
 require __DIR__ . '/auth.php';
+
+// Route::get('admin', function () {
+//     return "Hi Admin";
+// })->middleware('role:admin');
+
+// Route::get('user', function () {
+//     return "Hi user";
+// })->middleware('role:user');
+
+// // Route::get('/', function () {
+// //     return Inertia::render('Welcome', [
+// //         'canLogin' => Route::has('login'),
+// //         'canRegister' => Route::has('register'),
+// //         'laravelVersion' => Application::VERSION,
+// //         'phpVersion' => PHP_VERSION,
+// //     ]);
+// // });
