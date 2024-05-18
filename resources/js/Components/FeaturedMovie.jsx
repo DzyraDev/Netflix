@@ -1,15 +1,7 @@
+import { Link } from "@inertiajs/react";
+import PropType from "prop-types";
 
-import PropType from 'prop-types'
-
-
-
-export default function({
-    slug,
-    name,
-    category,
-    thumbnail,
-    rating = 0,
-}) {
+export default function ({ slug, name, category, thumbnail, rating = 0 }) {
     return (
         <div className="absolute overflow-hidden group mr-[30px]">
             <img
@@ -22,7 +14,7 @@ export default function({
                 <div className="p-[30px] flex items-center gap-1">
                     <img src="/icons/ic_star.svg" alt="" />
                     <span className="text-sm font-medium text-white mt-1">
-                       {rating.toFixed(1)}/5.0
+                        {rating.toFixed(1)}/5.0
                     </span>
                 </div>
             </div>
@@ -43,10 +35,8 @@ export default function({
                     <img src="/icons/ic_play.svg" width="50" alt="" />
                 </div>
             </div>
-            <a href={slug} className="inset-0 absolute z-50"></a>
+            <Link href={route("prototype.movie.show", slug)} className="inset-0 absolute z-50"></Link>
         </div>
-
-        
     );
     FeaturedMovie.propTypes = {
         slug: PropType.string.isRequired,
