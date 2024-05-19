@@ -1,9 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-// import "/resources/css/input.css";
 
-
-Input.propTypes = {
+TextInput.propTypes = {
     type: PropTypes.oneOf(["text", "email", "password", "number", "file"]),
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -18,7 +16,7 @@ Input.propTypes = {
     isError: PropTypes.bool,
 };
 
-export default function Input({
+export default function TextInput({
     type = "text",
     name,
     value,
@@ -28,7 +26,7 @@ export default function Input({
     autoComplete,
     required,
     isFocused,
-    handleChange,
+    handleChange = () => {},
     placeholder,
     isError,
 }) {
@@ -38,7 +36,7 @@ export default function Input({
         if (isFocused) {
             input.current.focus();
         }
-    }, []);
+    }, [isFocused]);
 
     return (
         <div className="flex flex-col items-start">
@@ -48,11 +46,12 @@ export default function Input({
                 value={value}
                 defaultValue={defaultValue}
                 className={`rounded-2xl bg-form-bg py-[13px] px-7 w-full ${
-                    isError && "input-error" } input-${variant} ${className}`}
+                    isError ? "input-error" : ""
+                } input-${variant} ${className}`}
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}
-                onChange={(e) => handleChange(e)}
+                onChange={handleChange}
                 placeholder={placeholder}
             />
         </div>
