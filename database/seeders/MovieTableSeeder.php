@@ -16,29 +16,29 @@ class MovieTableSeeder extends Seeder
     {
         $movies = [
             [
-                'name' => 'top gun',
-                'slug' => 'top gun',
+                'name' => 'Red demption',
+                'slug' => 'Red black',
                 'category' => 'top gun',
                 'video_url' => 'https://www.youtube.com/watch?v=UfCzFR8KzpE',
                 'thumbnail' => 'https://i.pinimg.com/736x/d8/09/03/d80903b51b445a7070550d2da389c5e2.jpg',
-                'rating' => 9.4,
+                'rating' => 3.4,
                 'is_feature' => 1,
             ],   [
-                'name' => 'top gun 2',
+                'name' => 'Avengers',
                 'slug' => 'top gun',
                 'category' => 'top gun',
                 'video_url' => 'https://www.youtube.com/watch?v=UfCzFR8KzpE',
                 'thumbnail' => 'https://i.pinimg.com/736x/d8/09/03/d80903b51b445a7070550d2da389c5e2.jpg',
-                'rating' => 9.4,
+                'rating' => 4.4,
                 'is_feature' => 0,
 
             ],   [
-                'name' => 'top gun 3',
+                'name' => 'Princess of china',
                 'slug' => 'top gun',
                 'category' => 'top gun',
                 'video_url' => 'https://www.youtube.com/watch?v=UfCzFR8KzpE',
                 'thumbnail' => 'https://i.pinimg.com/736x/d8/09/03/d80903b51b445a7070550d2da389c5e2.jpg',
-                'rating' => 9.4,
+                'rating' => 3.4,
                 'is_feature' => 0,
 
             ],
@@ -46,5 +46,4 @@ class MovieTableSeeder extends Seeder
 
         Movie::insert($movies);
     }
-
 }

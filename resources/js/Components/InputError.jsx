@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ValidationErrors({ errors }) {
+export default function InputError({ errors = {} }) {
     return (
         Object.keys(errors).length > 0 && (
             <div className="my-4 px-4 py-2 border-red-600 border-2 rounded-md">
@@ -9,11 +9,31 @@ export default function ValidationErrors({ errors }) {
                 </div>
 
                 <ul className="mt-3 list-disc list-inside text-sm text-red-600">
-                    {Object.keys(errors).map(function (key, index) {
-                        return <li key={index}>{errors[key]}</li>;
-                    })}
+                    {Object.keys(errors).map((key, index) => (
+                        <li key={index}>{errors[key]}</li>
+                    ))}
                 </ul>
             </div>
         )
     );
 }
+
+        // import React from "react";
+
+        // export default function InputError({ errors }) {
+        //     return (
+        //         Object.keys(errors).length > 0 && (
+        //             <div className="my-4 px-4 py-2 border-red-600 border-2 rounded-md">
+        //                 <div className="font-medium text-red-600">
+        //                     Whoops! Something went wrong.
+        //                 </div>
+
+        //                 <ul className="mt-3 list-disc list-inside text-sm text-red-600">
+        //                     {Object.keys(errors).map(function (key, index) {
+        //                         return <li key={index}>{errors[key]}</li>;
+        //                     })}
+        //                 </ul>
+        //             </div>
+        //         )
+        //     );
+        // }
